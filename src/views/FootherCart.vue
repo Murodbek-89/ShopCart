@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="footer-cart">
     <ul class="social">
       <li
         v-for="(social, i) of socials"
@@ -15,14 +15,17 @@
     <ul class="copy">
       <li>&copy; CoDEC 2022</li>
     </ul>
-    <div class="btn">
-      <a title="Back to Top" href="#hero">Back to Top</a>
+    <div class="btn-card">
+      <div class="btn">
+        <span>BACK TO TOP</span>
+      </div>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
+  name: 'FooherCart',
   created() {},
   data() {
     return {
@@ -56,7 +59,7 @@ export default {
 <style scoped>
 /* ---------Foter--------- */
 
-footer {
+.footer-cart {
   width: 100%;
   padding-top: 60px;
   padding-bottom: 24px;
@@ -64,7 +67,7 @@ footer {
   background-color: rgb(50, 50, 50);
 }
 
-footer hr {
+.footer-cart hr {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
@@ -72,7 +75,7 @@ footer hr {
   width: 80%;
 }
 
-footer .copy {
+.footer-cart .copy {
   font: 1.2em 'raleway-medium', sans-serif;
   text-align: center;
   list-style: none;
@@ -141,38 +144,10 @@ footer .copy {
     font-size: 0.7rem;
   }
 }
-
-.buttons {
-  position: relative;
-}
-
 .btn {
   position: absolute;
   top: -21px;
   left: 50%;
   z-index: 100;
-}
-
-.btn a {
-  text-decoration: none;
-  border: 0 none;
-  display: block;
-  height: 54px;
-  width: 200px;
-  margin-left: -100px;
-  background: linear-gradient(#8004e6, rgb(64, 0, 255), rgb(0, 128, 255));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  color: aqua;
-  text-align: center;
-  border-radius: 3px;
-  font: 12px/54px 'raleway-heavy', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: all 0.3s ease-in-out;
-}
-
-.btn a:hover {
-  background: linear-gradient(#004463, rgb(0, 255, 145), rgb(0, 50, 99));
-  color: rgb(0, 0, 0);
 }
 </style>

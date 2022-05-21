@@ -5,13 +5,6 @@
 <script>
 export default {
   name: 'HomeCart',
-  created() {},
-  data() {
-    return {};
-  },
-  props: {},
-  methods: {},
+  components: {},
 };
 </script>
-
-<style lang="scss" scoped></style>

@@ -1,37 +1,31 @@
 <template>
-  <HeaderCart />
-  <HeroCard />
-  <FootherCard />
+  <div>
+    <HeaderCart />
+    <HeroCart />
+    <HomeCart />
+    <router-view></router-view>
+    <FootherCart />
+  </div>
 </template>
-
 <script>
 import HeaderCart from './views/HeaderCart.vue';
-import HeroCard from './views/HeroCard.vue';
-import FootherCard from './views/FootherCard.vue';
+import HomeCart from './views/HomeCart.vue';
+import HeroCart from './views/HeroCart.vue';
+import FootherCart from './views/FootherCart.vue';
 export default {
-  components: { HeaderCart, HeroCard, FootherCard },
-  created() {},
-  data() {
-    return {};
-  },
-  props: {},
-  methods: {},
+  components: { HeaderCart, HomeCart, HeroCart, FootherCart },
 };
 </script>
 
-<style lang="scss">
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body {
-  background-color: rgb(100, 100, 100);
-}
-.btn-card {
+.btn-cart {
   position: relative;
 }
 
