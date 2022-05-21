@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeCart from '../views/HomeCart.vue';
+import HomeCart from '../views/HomeCard.vue';
 
 const routes = [
   {
@@ -10,27 +10,27 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    component: () => import('../components/AboutCart.vue'),
+    component: () => import('../components/AboutCard.vue'),
   },
   {
     path: '/photo',
     name: 'photo',
-    component: () => import('../components/PhotosCart.vue'),
+    component: () => import('../components/PhotosCard.vue'),
   },
   {
     path: '/catalog',
     name: 'catalog',
-    component: () => import('../components/CatalogCart.vue'),
+    component: () => import('../components/CatalogCard.vue'),
   },
   {
     path: '/coment',
     name: 'coment',
-    component: () => import('../components/ComentCart.vue'),
+    component: () => import('../components/ComentCard.vue'),
   },
   {
     path: '/contact',
     name: 'contact',
-    component: () => import('../components/ContactCart.vue'),
+    component: () => import('../components/ContactCard.vue'),
   },
 ];
 

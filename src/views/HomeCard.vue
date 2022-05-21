@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'HomeCart',
+  name: 'HomeCard',
   components: {},
 };
 </script>

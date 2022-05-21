@@ -19,55 +19,21 @@
       <h2>{{ selected }}</h2>
     </div>
   </div>
-  <div class="catalog-item">
-    <img class="img-card" :src="require('@/img/' + productcard.image)" alt="" />
-    <p>Name: {{ productcard.name }}</p>
-    <p>₽: {{ productcard.prics }}</p>
-    <p>Art: {{ productcard.article }}</p>
-    <button class="btn-card" @click="addCard">Add Card</button>
-  </div>
 </template>
 
 <script>
 export default {
-  name: 'Catalog-Item',
+  name: 'Test',
   created() {},
   data() {
-    return {
-      openfiltr: false,
-    };
+    return {};
   },
-  props: {
-    productcard: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
-    selected: {
-      type: String,
-      default: '',
-    },
-    categorys: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-  },
-  emits: ['addCard', 'selectOpsi'],
-  methods: {
-    addCard() {
-      this.$emit('addCard', this.productcard);
-    },
-    selectsOpsi(category) {
-      this.$emit('selectOpsi', category);
-    },
-  },
+  props: {},
+  methods: {},
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .filtr {
   height: 100%;
   width: 0;
@@ -147,39 +113,5 @@ export default {
 .filtr-cart p:hover,
 .filtr-cart p:focus {
   color: #f1f1f1;
-}
-
-.catalog-item {
-  flex-basis: 25%;
-  box-shadow: 0 0 10px 0;
-  padding: 20px;
-  margin: 30px auto;
-  text-align: center;
-  background-color: rgb(150, 150, 150);
-}
-
-.catalog-item .img-card {
-  width: 100%;
-}
-
-.catalog-item p {
-  padding: 5px;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-.catalog-item .btn-card {
-  border: 0 none;
-  height: 35px;
-  width: 85px;
-  background: linear-gradient(#8004e6, rgb(64, 0, 255), rgb(0, 128, 255));
-  color: aqua;
-  border-radius: 3px;
-  font: 12px 'raleway-heavy', sans-serif;
-  cursor: pointer;
-}
-
-.catalog-item .btn-card:hover {
-  background: linear-gradient(#004463, rgb(0, 255, 145), rgb(0, 50, 99));
-  color: rgb(0, 0, 0);
 }
 </style>

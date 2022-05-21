@@ -1,8 +1,8 @@
 <template>
-  <div class="hero-cart">
-    <div class="slide-cart" v-for="sliders of autoslider" :key="sliders.id">
+  <div class="hero-card">
+    <div class="slide-card" v-for="sliders of autoslider" :key="sliders.id">
       <div
-        class="carusel-cart"
+        class="carusel-card"
         :style="{ 'margin-left': '-' + 100 * slideindex + '%' }"
       >
         <img alt="" :src="require('@/img/' + sliders.img)" />
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'HeroCart',
+  name: 'HeroCard',
   created() {},
   data() {
     return {
@@ -52,20 +52,20 @@ export default {
 </script>
 
 <style scoped>
-.hero-cart {
+.hero-card {
   padding-top: 80px;
   max-width: 100%;
   overflow: hidden;
   display: flex;
 }
 
-.slide-cart {
+.slide-card {
   display: flex;
   position: relative;
   text-align: center;
 }
 
-.carusel-cart {
+.carusel-card {
   display: flex;
 }
 

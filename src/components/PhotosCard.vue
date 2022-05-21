@@ -1,11 +1,11 @@
 <template>
-  <div class="photo-cart">
-    <div class="btn-cart">
+  <div class="photo-card">
+    <div class="btn-card">
       <div class="btn">
         <span>PHOTA</span>
       </div>
     </div>
-    <div class="item-cart">
+    <div class="item-card">
       <PhotoItem
         v-for="image of images"
         :key="image.id"
@@ -13,7 +13,7 @@
         @modalShow="showModal"
       />
     </div>
-    <div class="modal-cart">
+    <div class="modal-card">
       <MadalItem v-for="modal of modals" :key="modal.id" :modalcard="modal" />
     </div>
   </div>
@@ -51,12 +51,12 @@ export default {
 </script>
 
 <style scoped>
-.photo-cart {
+.photo-card {
   width: 100%;
   margin: 0 auto;
 }
 
-.item-cart {
+.item-card {
   display: flex;
   flex-wrap: wrap;
   padding: 30px;

@@ -1,17 +1,14 @@
 <template>
   <div class="cart-item">
-    <img class="cart-img" :src="require('@/img/' + cartdata.image)" alt="" />
-    <div>
-      <p>Name: {{ cartdata.name }}</p>
-      <p>₽: {{ cartdata.prics }}</p>
-      <p>Art: {{ cartdata.article }}</p>
-    </div>
-    <div class="cart-id">
-      <span @click="incrementCart">+</span>
-      <p>Qty: {{ cartdata.id }}</p>
-      <span @click="decrementCart">-</span>
-    </div>
-    <button class="cart-btn" @click="cartDelete">Delete</button>
+    <CartList
+      v-for="(cartitem, i) of cartdata"
+      :key="cartitem"
+      :carta="cartitem"
+      @cartDelete="cartDelete(i)"
+      @increment="increMent(i)"
+      @decrement="decreMent(i)"
+    />
+    <h2 v-if="!cartdata.length">There are no products in cart...</h2>
   </div>
   <div class="cart-total">
     <h2>Total</h2>
@@ -20,6 +17,8 @@
 </template>
 
 <script>
+import CartList from './Cart-List.vue';
+import { mapActions } from 'vuex';
 export default {
   name: 'Cart-Item',
   created() {},
@@ -28,92 +27,59 @@ export default {
   },
   props: {
     cartdata: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
-    cartd: {
       type: Array,
       default() {
         return [];
       },
     },
   },
-  emits: ['cartDelete', 'increment', 'decrement'],
   methods: {
-    cartDelete() {
-      this.$emit('cartDelete');
+    ...mapActions(['DELETE_CART', 'INCREMENT_CART', 'DECREMENT_CART']),
+    cartDelete(i) {
+      this.DELETE_CART(i);
     },
-    incrementCart() {
-      this.$emit('increment');
+    increMent(i) {
+      this.INCREMENT_CART(i);
     },
-    decrementCart() {
-      this.$emit('decrement');
+    decreMent(i) {
+      this.DECREMENT_CART(i);
     },
   },
   computed: {
     totalCart() {
       let result = [];
-      for (let item of this.cartd) {
-        result.push(item.prics * item.id);
-      }
 
-      result = result.reduce(function (sum, el) {
-        return sum + el;
-      });
-      return result;
+      if (this.cartdata.length) {
+        for (let item of this.cartdata) {
+          result.push(item.prics * item.id);
+        }
+        result = result.reduce(function (sum, el) {
+          return sum + el;
+        });
+        return result;
+      } else {
+        return 0;
+      }
     },
   },
   mounted() {},
+  components: { CartList },
 };
 </script>
 
 <style scoped>
 .cart-item {
-  flex-basis: 25%;
-  box-shadow: 0 0 10px 0;
-  padding: 20px;
-  margin: 30px auto;
-  text-align: center;
-  background-color: rgb(110, 110, 110);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  background-color: rgb(60, 60, 60);
 }
 
-.cart-item .cart-img {
-  width: 100%;
-}
-
-.cart-item p {
-  padding: 5px;
-  font-family: 'Josefin Sans', sans-serif;
-}
-.cart-id span {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 2rem;
-  display: inline-block;
-  cursor: pointer;
-  height: 32px;
-  width: 50px;
-  background-color: rgb(140, 140, 140);
-  border-radius: 2px;
-  box-shadow: 0 0 5px 0;
-}
-
-.cart-item .cart-btn {
-  border: 0 none;
-  height: 35px;
-  width: 85px;
-  background: linear-gradient(#8004e6, rgb(64, 0, 255), rgb(0, 128, 255));
+.cart-item > h2 {
   color: aqua;
-  border-radius: 3px;
-  font: 12px 'raleway-heavy', sans-serif;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.cart-item .cart-btn:hover {
-  background: linear-gradient(#004463, rgb(0, 255, 145), rgb(0, 50, 99));
-  color: rgb(0, 0, 0);
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 50px auto;
+  min-height: 100px;
 }
 
 .cart-total {

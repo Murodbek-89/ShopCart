@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": 1,
+      "image": "11.jpg",
+      "name": "Tovar 1",
+      "prics": "100",
+      "article": "10",
+      "liners": "true",
+      "category": "City"
+    },
+    {
+      "id": 1,
+      "image": "12.jpg",
+      "name": "Tovar 2",
+      "prics": "120",
+      "article": "12",
+      "liners": "true",
+      "category": "Nature"
+    },
+    {
+      "id": 1,
+      "image": "13.jpg",
+      "name": "Tovar 3",
+      "prics": "130",
+      "article": "13",
+      "liners": "true"
+    },
+    {
+      "id": 1,
+      "image": "14.jpg",
+      "name": "Tovar 4",
+      "prics": "140",
+      "article": "40",
+      "liners": "true",
+      "category": "Nature"
+    },
+    {
+      "id": 1,
+      "image": "15.jpg",
+      "name": "Tovar 5",
+      "prics": "150",
+      "article": "15",
+      "liners": "true",
+      "category": "Nature"
+    },
+    {
+      "id": 1,
+      "image": "16.jpg",
+      "name": "Tovar 6",
+      "prics": "160",
+      "article": "16",
+      "liners": "true",
+      "category": "City"
+    }
+  ]
+}

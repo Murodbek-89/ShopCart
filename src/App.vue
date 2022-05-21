@@ -1,19 +1,19 @@
 <template>
   <div>
-    <HeaderCart />
-    <HeroCart />
-    <HomeCart />
+    <HeaderCard />
+    <HeroCard />
+    <HomeCard />
     <router-view></router-view>
-    <FootherCart />
+    <FootherCard />
   </div>
 </template>
 <script>
-import HeaderCart from './views/HeaderCart.vue';
-import HomeCart from './views/HomeCart.vue';
-import HeroCart from './views/HeroCart.vue';
-import FootherCart from './views/FootherCart.vue';
+import HeaderCard from './views/HeaderCard.vue';
+import HomeCard from './views/HomeCard.vue';
+import HeroCard from './views/HeroCard.vue';
+import FootherCard from './views/FootherCard.vue';
 export default {
-  components: { HeaderCart, HomeCart, HeroCart, FootherCart },
+  components: { HeaderCard, HomeCard, HeroCard, FootherCard },
 };
 </script>
 
@@ -25,7 +25,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-.btn-cart {
+.btn-card {
   position: relative;
 }
 

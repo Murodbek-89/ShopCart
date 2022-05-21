@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer-cart">
+  <footer class="footer-card">
     <ul class="social">
       <li
         v-for="(social, i) of socials"
@@ -15,17 +15,15 @@
     <ul class="copy">
       <li>&copy; CoDEC 2022</li>
     </ul>
-    <div class="btn-card">
-      <div class="btn">
-        <span>BACK TO TOP</span>
-      </div>
+    <div class="btn">
+      <span>BACK TO TOP</span>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'FooherCart',
+  name: 'FooherCard',
   created() {},
   data() {
     return {
@@ -59,7 +57,7 @@ export default {
 <style scoped>
 /* ---------Foter--------- */
 
-.footer-cart {
+.footer-card {
   width: 100%;
   padding-top: 60px;
   padding-bottom: 24px;
@@ -67,7 +65,7 @@ export default {
   background-color: rgb(50, 50, 50);
 }
 
-.footer-cart hr {
+.footer-card hr {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
@@ -75,7 +73,7 @@ export default {
   width: 80%;
 }
 
-.footer-cart .copy {
+.footer-card .copy {
   font: 1.2em 'raleway-medium', sans-serif;
   text-align: center;
   list-style: none;

@@ -1,14 +1,14 @@
 <template>
-  <div class="coment-cart">
-    <div class="btn-cart">
+  <div class="coment-card">
+    <div class="btn-card">
       <div class="btn" @click="showComent = !showComent">
         <span v-if="showComent">COMENTS</span>
         <span v-else>ADD COMENTS</span>
       </div>
     </div>
     <ComentItem @addComent="addComents" v-show="showComent" />
-    <div class="coments-cart" v-for="coment of coments" :key="coment">
-      <div class="profil-cart">
+    <div class="coments-card" v-for="coment of coments" :key="coment">
+      <div class="profil-card">
         <img class="profil-img" src="@/img/20.jpg" alt="profile" />
         <span class="names">{{ coment.names }}</span>
       </div>
@@ -44,38 +44,38 @@ export default {
 </script>
 
 <style scoped>
-.coment-cart {
+.coment-card {
   background-color: rgb(60, 60, 60);
 }
 
-.coments-cart {
+.coments-card {
   position: relative;
   max-width: 800px;
   padding: 50px;
   margin: auto;
 }
 
-.coments-cart .profil-cart {
+.coments-card .profil-card {
   position: absolute;
   left: 30px;
   text-align: center;
   left: inherit;
   right: 30px;
 }
-.coments-cart .profil-img {
+.coments-card .profil-img {
   display: inline-block;
   margin: 0 auto;
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
-.coments-cart .profil-cart .names {
+.coments-card .profil-card .names {
   display: block;
   color: #fff;
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.coments-cart .coment-holder {
+.coments-card .coment-holder {
   font-family: 'Josefin Sans', sans-serif;
   background-color: rgb(90, 90, 90);
   box-shadow: 0 0 10px 0;

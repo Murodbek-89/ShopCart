@@ -1,12 +1,12 @@
 <template>
-  <header class="header-cart">
+  <header class="header-card">
     <router-link to="/" class="logo">ShooPCard</router-link>
     <div class="menu" :class="{ menus: shows }" @click="shows = !shows">
       <span class="spans1"></span>
       <span class="spans2"></span>
       <span class="spans3"></span>
     </div>
-    <nav class="nav-cart" :class="{ navacteve: shows }">
+    <nav class="nav-card" :class="{ navacteve: shows }">
       <ul class="nav-menu" @click="shows = false">
         <li>
           <router-link to="about">About</router-link>
@@ -20,8 +20,8 @@
         <li>
           <router-link to="coment">Coments</router-link>
         </li>
-        <li class="reg-cart">
-          <a href=""><button>KIRISH</button></a>
+        <li class="reg-card">
+          <router-link to="contact"><button>KIRISH</button></router-link>
         </li>
       </ul>
     </nav>
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'HeaderCart',
+  name: 'HeaderCard',
   created() {},
   data() {
     return {
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header-cart {
+.header-card {
   width: 100%;
   height: 80px;
   display: flex;
@@ -55,7 +55,7 @@ export default {
   z-index: 999;
 }
 
-.header-cart > a {
+.header-card > a {
   text-decoration: none;
   color: rgb(200, 200, 200);
   font-size: 2rem;
@@ -89,7 +89,7 @@ export default {
   color: aqua;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   .nav-menu {
     gap: 20px;
     margin-right: 30px;
@@ -99,8 +99,8 @@ export default {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .nav-cart {
+@media screen and (max-width: 650px) {
+  .nav-card {
     margin-top: 80px;
     height: 100%;
     width: 0;
@@ -159,7 +159,7 @@ export default {
     transform: rotate(45deg) translate(-5px, -7px);
   }
 }
-.reg-cart button {
+.reg-card button {
   background: rgb(200, 200, 200);
   font-family: 'Josefin Sans', sans-serif;
   border: 0 none;

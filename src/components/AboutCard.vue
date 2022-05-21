@@ -1,11 +1,11 @@
 <template>
-  <div class="about-cart">
-    <div class="btn-cart">
+  <div class="about-card">
+    <div class="btn-card">
       <div class="btn" @click="modals = !modals">
         <span>MODALS</span>
       </div>
     </div>
-    <div class="about-section">
+    <div class="about-card">
       <h2>Why Use AppKit?</h2>
       <ul>
         <li v-for="image of images" :key="image">
@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="modal-section" v-show="modals">
+    <div class="modal-card" v-show="modals">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi
         repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A
@@ -42,7 +42,7 @@
 
 <script>
 export default {
-  name: 'AboutCart',
+  name: 'AboutCard',
   created() {},
   data() {
     return {
@@ -81,20 +81,20 @@ export default {
 </script>
 
 <style scoped>
-.about-section {
+.about-card {
   padding: 2em 5%;
   text-align: center;
   background-color: rgb(60, 60, 60);
   position: relative;
 }
-.about-section h2,
+.about-card h2,
 h3,
 p {
   line-height: 1.6;
   color: rgb(200, 200, 200);
   font-family: 'Josefin Sans', sans-serif;
 }
-.about-section ul li {
+.about-card ul li {
   padding: 20px;
   display: inline-block;
 }
@@ -103,7 +103,7 @@ p {
   margin: 50px;
 }
 
-.modal-section {
+.modal-card {
   position: fixed;
   background-color: rgb(60, 60, 60);
   top: 12%;
@@ -112,7 +112,7 @@ p {
   height: 100%;
 }
 
-.modal-section p {
+.modal-card p {
   color: rgb(200, 200, 200);
   line-height: 1.6;
   margin: 4em;
@@ -120,15 +120,7 @@ p {
 }
 
 @media only screen and (max-width: 700px) {
-  .section {
-    padding: 4em 10%;
-  }
-  .section p {
-    font-size: 1.8rem;
-    line-height: 2;
-  }
-
-  .modal-section p {
+  .modal-card p {
     line-height: 1.6;
     margin: 4em;
     font-size: 1rem;
