@@ -2,8 +2,8 @@
   <div class="coment-form">
     <div class="forms">
       <form @submit.prevent="onSubmit">
-        <input type="text" placeholder="Name" v-model="names" />
-        <textarea placeholder="Coments" v-model="comenta"></textarea>
+        <input type="text" placeholder="Name" v-model="name" />
+        <textarea placeholder="Coments" v-model="body"></textarea>
         <button class="submit-form" type="submit">Submit</button>
       </form>
     </div>
@@ -15,23 +15,23 @@ export default {
   created() {},
   data() {
     return {
-      names: '',
-      comenta: '',
+      name: '',
+      body: '',
     };
   },
   props: {},
   emits: ['addComent'],
   methods: {
     onSubmit() {
-      if (this.names.trim()) {
+      if (this.name.trim()) {
         const newcoment = {
           id: Date.now(),
-          names: this.names,
-          comenta: this.comenta,
+          name: this.name,
+          body: this.body,
         };
         this.$emit('addComent', newcoment);
-        this.names = '';
-        this.comenta = '';
+        this.name = '';
+        this.body = '';
       }
     },
   },
@@ -41,7 +41,6 @@ export default {
 
 <style scoped>
 .coment-form {
-  background-color: rgb(60, 60, 60);
   padding: 50px;
   overflow: hidden;
 }
@@ -63,7 +62,7 @@ textarea {
   font-size: 15px;
   line-height: 24px;
   border-radius: 3px;
-  background-color: rgb(90, 90, 90);
+  background: rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 10px 0;
   margin-bottom: 45px;
   width: 100%;

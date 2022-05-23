@@ -85,7 +85,7 @@ export default {
 .cart-total {
   position: fixed;
   background: linear-gradient(#8004e6, rgb(64, 0, 255), rgb(0, 128, 255));
-  padding: 15px;
+  padding: 17px;
   color: aqua;
   display: flex;
   justify-content: center;

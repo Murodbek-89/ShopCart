@@ -1,8 +1,8 @@
 <template>
   <div class="filtr" :class="{ activefiltr: openfiltr }">
-    <div class="filtr-cart">
+    <div class="filtr-card">
       <p
-        v-for="categore of categorys"
+        v-for="categore of category"
         :key="categore.value"
         @click="selectsOpsi(categore), (openfiltr = false)"
       >
@@ -16,20 +16,39 @@
     >
       <span class="spans"></span>
       <span class="spansi"></span>
-      <h2>{{ selected }}</h2>
+      <h2>{{ selects }}</h2>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Test',
+  name: 'SelectItem',
   created() {},
   data() {
-    return {};
+    return {
+      openfiltr: false,
+      options: '',
+    };
   },
-  props: {},
-  methods: {},
+  props: {
+    category: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
+    selects: {
+      type: String,
+      default: '',
+    },
+  },
+  methods: {
+    selectsOpsi(category) {
+      this.$emit('selectOpsi', category);
+      this.options = false;
+    },
+  },
 };
 </script>
 
@@ -45,24 +64,26 @@ export default {
   background-color: rgba(0, 0, 0, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
+  font-family: 'Josefin Sans', sans-serif;
 }
 .activefiltr {
   width: 20%;
 }
 .open-filtr {
-  font-size: 25px;
-  cursor: pointer;
   position: fixed;
   background: linear-gradient(#8004e6, rgb(64, 0, 255), rgb(0, 128, 255));
-  padding: 10px;
+  padding: 15px;
   color: aqua;
-  font-family: 'Josefin Sans', sans-serif;
   display: flex;
   justify-content: center;
   border-radius: 5px;
   bottom: 0;
   left: 30%;
   right: 30%;
+  cursor: pointer;
+}
+.open-filtr h2 {
+  margin-top: 5px;
 }
 .open-filtr span {
   z-index: 100;
@@ -75,24 +96,24 @@ export default {
 }
 .open-filtr .spans {
   transform: rotate(-45deg);
-  top: 25px;
+  top: 20px;
 }
 .open-filtr .spansi {
   transform: rotate(45deg);
   right: 35px;
-  bottom: -5px;
+  bottom: 0;
 }
 
 .opens .spans {
-  top: 16px;
+  top: 10px;
   transition: all 0.5s ease;
 }
 .opens .spansi {
-  bottom: -16px;
+  bottom: -10px;
   transition: all 0.5s ease;
 }
 
-.filtr-cart {
+.filtr-card {
   position: relative;
   top: 25%;
   width: 100%;
@@ -100,7 +121,7 @@ export default {
   margin-top: 30px;
 }
 
-.filtr-cart p {
+.filtr-card p {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
@@ -110,8 +131,7 @@ export default {
   cursor: pointer;
 }
 
-.filtr-cart p:hover,
-.filtr-cart p:focus {
+.filtr-card p:hover {
   color: #f1f1f1;
 }
 </style>

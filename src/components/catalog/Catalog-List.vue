@@ -4,7 +4,7 @@
     <p>Name: {{ product.name }}</p>
     <p>₽: {{ product.prics }}</p>
     <p>Art: {{ product.article }}</p>
-    <button class="btn-card" @click="addCart">Add Card</button>
+    <button class="btns-card" @click="addCart">Add Card</button>
   </div>
 </template>
 
@@ -51,7 +51,7 @@ export default {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.list-card > .btn-card {
+.list-card > .btns-card {
   border: 0 none;
   height: 35px;
   width: 85px;
@@ -62,7 +62,7 @@ export default {
   cursor: pointer;
 }
 
-.list-card > .btn-card:hover {
+.list-card > .btns-card:hover {
   background: linear-gradient(#004463, rgb(0, 255, 145), rgb(0, 50, 99));
   color: rgb(0, 0, 0);
 }

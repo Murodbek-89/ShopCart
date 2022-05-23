@@ -21,13 +21,6 @@ export default {
   data() {
     return {
       catalogs: true,
-      categoryes: [
-        { names: 'All', value: 'all' },
-        { names: 'Nature', value: 'm' },
-        { names: 'City', value: 'm' },
-      ],
-      select: 'FILTERS',
-      sortProducts: [],
     };
   },
   props: {},
@@ -37,17 +30,6 @@ export default {
   methods: {
     showCart() {
       this.catalogs = !this.catalogs;
-      this.total = !this.total;
-    },
-    selectSort(category) {
-      this.sortProducts = [];
-      let vm = this;
-      this.PRODUCTS.map(function (item) {
-        if (item.category === category.names) {
-          vm.sortProducts.push(item);
-        }
-      });
-      this.select = category.names;
     },
   },
   components: { CatalogItem, CartItem },

@@ -1,7 +1,12 @@
 <template>
   <div class="item-card">
+    <SelectItem
+      :category="categoryes"
+      :selects="select"
+      @selectOpsi="selectSort"
+    />
     <CatalogList
-      v-for="producta of PRODUCTS"
+      v-for="producta of filtrProducts"
       :key="producta"
       :product="producta"
       @addCart="addCart"
@@ -11,23 +16,23 @@
 
 <script>
 import CatalogList from './Catalog-List.vue';
+import SelectItem from './Select-Item.vue';
 import { mapActions, mapGetters } from 'vuex';
 export default {
   name: 'Catalog-Item',
   created() {},
   data() {
     return {
-      openfiltr: false,
+      categoryes: [
+        { names: 'All', value: 'all' },
+        { names: 'Nature', value: 'm' },
+        { names: 'City', value: 'm' },
+      ],
+      select: 'FILTERS',
+      sortProducts: [],
     };
   },
-  props: {
-    productItem: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
-  },
+  props: {},
   computed: {
     ...mapGetters(['PRODUCTS']),
     filtrProducts() {
@@ -44,8 +49,15 @@ export default {
     addCart(data) {
       this.ADD_CART(data);
     },
-    selectsOpsi(category) {
-      this.$emit('selectOpsi', category);
+    selectSort(category) {
+      this.sortProducts = [];
+      let vm = this;
+      this.PRODUCTS.map(function (item) {
+        if (item.category === category.names) {
+          vm.sortProducts.push(item);
+        }
+      });
+      this.select = category.names;
     },
   },
   mounted() {
@@ -55,7 +67,7 @@ export default {
       }
     });
   },
-  components: { CatalogList },
+  components: { CatalogList, SelectItem },
 };
 </script>
 
